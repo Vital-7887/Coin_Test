@@ -1,7 +1,5 @@
 import time
-
 import pytest
-
 from pages.basepage import BasePage
 from locators.elements_page_locator import All_Locator
 from selenium.common.exceptions import TimeoutException
