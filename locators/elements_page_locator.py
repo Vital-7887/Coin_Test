@@ -31,8 +31,17 @@ class All_Locator:
     add_account_button_step3 = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/button[2]')
     done_button = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/button')
 
+    # strategy page
+    subscribe_to_copytrading_button = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div/div[2]/div[2]/div[1]/button')
 
+    # copytrading subscription modal window
 
-
+    dropdown_select_account = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div/div[2]/div[2]/div[1]/div[3]/div/div/div/div[5]/div/div/div')
+    dropdown_bybit_item = (By.XPATH, '//div[text()="auto_test_api_bybit"]')
+    subscription_modal_window_1_step_button = (By.XPATH, '//button[@class = "styles__StyledButton-sc-1afd7sh-0 iYbZDF styles__ApplyButton-sc-1piieu7-18 fnyORG"]')
+    subscription_modal_window_2_step_button = (By.XPATH, '//button[@class = "styles__StyledButton-sc-1afd7sh-0 iYbZDF"]')
+    dropdown_alignment_method = (By.XPATH, '//div[@class = "styles__DropdownBlock-sc-10gtvvv-1 styles__DropdownItem-sc-10gtvvv-6 leMWGX hDCSwg"]')
+    manual_alignment_item = (By.XPATH, '//div[@class ="styles__DropdownBlock-sc-10gtvvv-1 styles__DropdownItem-sc-10gtvvv-6 leMWGX bXxglf"]')
+    start_copying_button = (By.XPATH, '//button[@class ="styles__StyledButton-sc-1afd7sh-0 jSiKd"]')
 
 

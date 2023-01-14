@@ -6,7 +6,7 @@ from selenium.common.exceptions import TimeoutException
 from consts import USER, API_BYBIT, API_BINANCE, API_OKX
 
 
-class Tests(BasePage):
+class TestsLogInAndAddApi(BasePage):
     locators = All_Locator
 
     def Log_in_user(self):
@@ -29,6 +29,7 @@ class Tests(BasePage):
             self.element_is_visible(self.locators.done_button).click()
         except TimeoutException:
             pytest.fail(f"  Valid Bybit exchange API key  {API_BYBIT.get('api_name')}  NOT added  ")
+
 
 
     def Add_API_Key_Binance(self):
@@ -61,3 +62,4 @@ class Tests(BasePage):
             self.element_is_visible(self.locators.done_button).click()
         except TimeoutException:
             pytest.fail(f"  Valid OKX exchange API key  {API_OKX.get('api_name')}  NOT added  ")
+
