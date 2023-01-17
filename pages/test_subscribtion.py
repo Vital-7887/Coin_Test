@@ -1,17 +1,22 @@
 import time
-import pytest
+from selenium.webdriver.common.by import By
+
+from selenium.webdriver.support.ui import WebDriverWait
+
+
 from pages.basepage import BasePage
 from locators.elements_page_locator import All_Locator
-from selenium.common.exceptions import TimeoutException
 from consts import USER, API_BYBIT
 
 class TestsSubscription(BasePage):
     locators = All_Locator
 
-    def Subscribe_bybit_spot_strategy(self):
+    def Subscribe_to_strategy_with_autoalign(self, api_name):
+        self.api_name = api_name
         self.element_is_visible(self.locators.subscribe_to_copytrading_button).click()
         self.element_is_visible(self.locators.dropdown_select_account).click()
-        self.element_is_visible(self.locators.dropdown_bybit_item).click()
+        dropdown_item = (By.XPATH,  "//div[text()= '" + self.api_name + "' ]")
+        self.element_is_visible(dropdown_item).click()
         self.element_is_clickable(self.locators.subscription_modal_window_1_step_button).click()
         self.element_is_clickable(self.locators.subscription_modal_window_2_step_button).click()
         # time.sleep(2)
