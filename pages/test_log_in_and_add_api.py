@@ -47,6 +47,7 @@ class TestsLogInAndAddApi(BasePage):
         except TimeoutException:
             pytest.fail(f"  Valid Binance exchange API key  {API_BINANCE.get('api_name')}  NOT added  ")
 
+
     def Add_API_Key_OKX(self):
         self.element_is_visible(self.locators.add_account_button).click()
         self.element_is_visible(self.locators.choose_exchange_button_OKX).click()

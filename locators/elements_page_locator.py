@@ -45,3 +45,14 @@ class All_Locator:
     start_copying_button = (By.XPATH, '//button[@class ="styles__StyledButton-sc-1afd7sh-0 jSiKd"]')
 
 
+    madal_menu = (By.XPATH, '//div[@class="styles__OptionsButton-sc-1rikj74-1 hfdLhs"]')
+    second_item_modal_menu = (By.XPATH, '//button[@class="styles__DropdownItem-sc-1opd8lr-3 jRkwJS"][2] ')
+    button_delete_account_on_modal_window = (By.XPATH, '//button[@class="styles__StyledButton-sc-1afd7sh-0 jSiKd"] ')
+    added_exchange_account_item = (By.XPATH,'//div[@class = "styles__ItemTitle-sc-8hcuzp-2 bTsnVE"]')
+
+
+
+
+
+
+
