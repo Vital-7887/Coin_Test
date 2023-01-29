@@ -4,7 +4,7 @@ from pages.basepage import BasePage
 from locators.elements_page_locator import All_Locator
 
 
-class TestsSubscription(BasePage):
+class Subscription(BasePage):
     locators = All_Locator
 
     def Subscribe_to_strategy_with_autoalign(self, api_name):

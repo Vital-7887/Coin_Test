@@ -6,7 +6,7 @@ from selenium.common.exceptions import TimeoutException
 from consts import USER, API_BYBIT, API_BINANCE, API_OKX
 
 
-class TestsLogInAndAddApi(BasePage):
+class LogInAndAddApi(BasePage):
     locators = All_Locator
 
     def Log_in_user(self):
@@ -17,9 +17,9 @@ class TestsLogInAndAddApi(BasePage):
 
     def Add_API_Key_Bybit(self):
         self.element_is_visible(self.locators.add_account_button).click()
-        self.element_is_visible(self.locators.choose_exchange_button_Bybit).click()
-        self.element_is_visible(self.locators.next_step_button_step1).click()
-        self.element_is_visible(self.locators.next_step_button_step2).click()
+        self.element_is_visible(self.locators.select_exchange_button_Bybit).click()
+        self.element_is_visible(self.locators.next_step_button).click()
+        self.element_is_visible(self.locators.next_step_button).click()
         self.element_is_visible(self.locators.name_api_key_fild).send_keys(API_BYBIT.get('api_name'))
         self.element_is_visible(self.locators.api_key_fild).send_keys(API_BYBIT.get('api_key'))
         self.element_is_visible(self.locators.secret_key_fild).send_keys(API_BYBIT.get('secret_key'))
@@ -34,9 +34,9 @@ class TestsLogInAndAddApi(BasePage):
 
     def Add_API_Key_Binance(self):
         self.element_is_visible(self.locators.add_account_button).click()
-        self.element_is_visible(self.locators.choose_exchange_button_Binance).click()
-        self.element_is_visible(self.locators.next_step_button_step1).click()
-        self.element_is_visible(self.locators.next_step_button_step2).click()
+        self.element_is_visible(self.locators.select_exchange_button_Binance).click()
+        self.element_is_visible(self.locators.next_step_button).click()
+        self.element_is_visible(self.locators.next_step_button).click()
         self.element_is_visible(self.locators.name_api_key_fild).send_keys(API_BINANCE.get('api_name'))
         self.element_is_visible(self.locators.api_key_fild).send_keys(API_BINANCE.get('api_key'))
         self.element_is_visible(self.locators.secret_key_fild).send_keys(API_BINANCE.get('secret_key'))
@@ -50,9 +50,9 @@ class TestsLogInAndAddApi(BasePage):
 
     def Add_API_Key_OKX(self):
         self.element_is_visible(self.locators.add_account_button).click()
-        self.element_is_visible(self.locators.choose_exchange_button_OKX).click()
-        self.element_is_visible(self.locators.next_step_button_step1).click()
-        self.element_is_visible(self.locators.next_step_button_step2).click()
+        self.element_is_visible(self.locators.select_exchange_button_OKX).click()
+        self.element_is_visible(self.locators.next_step_button).click()
+        self.element_is_visible(self.locators.next_step_button).click()
         self.element_is_visible(self.locators.name_api_key_fild).send_keys(API_OKX.get('api_name'))
         self.element_is_visible(self.locators.api_key_fild).send_keys(API_OKX.get('api_key'))
         self.element_is_visible(self.locators.secret_key_fild).send_keys(API_OKX.get('secret_key'))
