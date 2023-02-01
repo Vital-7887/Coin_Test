@@ -9,6 +9,8 @@ class Delete_api_key(BasePage):
     def Delete_api_key_from_account_page(self, api_name):
         self.api_name = api_name
         exchange_account_item = (By.XPATH, "//div[text()= '" + self.api_name + "' ]")
+        self.element_is_visible(self.locators.dropdown_number_of_exchange_accounts_on_the_page).click()
+        self.element_is_visible(self.locators.button_all_exchange_accounts_on_the_page).click()
         self.element_is_present(exchange_account_item).click()
         self.element_is_present(self.locators.modal_menu).click()
         self.element_is_visible(self.locators.second_item_modal_menu).click()

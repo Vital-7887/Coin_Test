@@ -7,8 +7,8 @@ class All_Locator:
     LOG_IN_button = (By.XPATH, '//*[@id="__next"]/div/header/div/div[1]/div[2]/a[1]')
 
     # Log In page
-    username_fild = (By.XPATH, '//*[@id="1"]')
-    password_fild = (By.XPATH, '//*[@id="2"]')
+    username_field = (By.XPATH, '//*[@id="1"]')
+    password_field = (By.XPATH, '//*[@id="2"]')
     log_in_button = (By.XPATH, '//*[@id="__next"]/div/div[1]/div[2]/form/div[3]/button')
 
     # sidebar
@@ -24,10 +24,10 @@ class All_Locator:
     select_exchange_button_OKX = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[2]/button')
     next_step_button = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/button[2]')
     # next_step_button_step2 = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/button[2]')
-    name_api_key_fild = (By.XPATH, '//*[@id="1"]')
-    api_key_fild = (By.XPATH, '//*[@id="2"]')
-    secret_key_fild = (By.XPATH, '//*[@id="3"]')
-    password_api_fild = (By.XPATH, '//*[@id="4"]')
+    name_api_key_field = (By.XPATH, '//*[@id="1"]')
+    api_key_field = (By.XPATH, '//*[@id="2"]')
+    secret_key_field = (By.XPATH, '//*[@id="3"]')
+    password_api_field = (By.XPATH, '//*[@id="4"]')
     add_account_button_step3 = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/button[2]')
     done_button = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/button')
 
@@ -46,6 +46,9 @@ class All_Locator:
     modal_menu = (By.XPATH, '//div[@class="styles__OptionsButton-sc-1rikj74-1 hfdLhs"]')
     added_exchange_account_item = (By.XPATH, '//div[@class = "styles__ItemTitle-sc-8hcuzp-2 bTsnVE"]')
     added_exchange_account_value = (By.XPATH, '//div[@class = "styles__Item-sc-8hcuzp-1 jlyGJE"][contains(text(),"USDT")]')
+    dropdown_number_of_exchange_accounts_on_the_page = (By.XPATH, '//div[@class = "styles__TextPlaceholder-sc-s7kz7k-11 hrMjTn"][1]')
+    button_all_exchange_accounts_on_the_page = (By.XPATH, '//button[@class = "styles__Option-sc-s7kz7k-7 ibhdvx"][3]')
+
 
     # delete account modal manu on account's page
     second_item_modal_menu = (By.XPATH, '//button[@class="styles__DropdownItem-sc-1opd8lr-3 jRkwJS"][2] ')
