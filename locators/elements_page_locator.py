@@ -43,16 +43,21 @@ class All_Locator:
     dropdown_alignment_method = (By.XPATH, '//div[@class = "styles__DropdownBlock-sc-10gtvvv-1 styles__DropdownItem-sc-10gtvvv-6 leMWGX hDCSwg"]')
     manual_alignment_item = (By.XPATH, '//div[@class ="styles__DropdownBlock-sc-10gtvvv-1 styles__DropdownItem-sc-10gtvvv-6 leMWGX bXxglf"]')
     start_copying_button = (By.XPATH, '//button[@class ="styles__StyledButton-sc-1afd7sh-0 jSiKd"]')
+    # stop loss
     stop_loss_field = (By.XPATH, '//button[@class ="styles__DropdownToggler-sc-s7kz7k-4 bzJcXx"][1]')
     enabled_stop_loss_item = (By.XPATH, '//button[@class = "styles__Option-sc-s7kz7k-7 ibhdvx"]')
     value_stop_loss_field = (By.XPATH, '//input[@class="styles__StyledInput-sc-1ioa5fk-3 deOWdE"]')
-
-
     # convert_stop_loss_field = (By.XPATH, '//div[@class = "styles__Text-sc-s7kz7k-9 hxQiqI"][text() = "USDT"]')
     convert_stop_loss_field = (By.XPATH, '//div[@class = "styles__StopLossFields-sc-1gyq91b-8 forSpP"]/div[@class = "styles__Wrapper-sc-s7kz7k-0 kpNwKf styles__Select-sc-1gyq91b-7 dcMkLV"]//div[@class = "styles__Text-sc-s7kz7k-9 hxQiqI"]')
     convert_stop_loss_value_usdt = (By.XPATH, '//button[@class = "styles__Option-sc-s7kz7k-7 ibhdvx"]')
     convert_stop_loss_value_btc = (By.XPATH, '//button[@class = "styles__Option-sc-s7kz7k-7 bnYHls"]')
-
+    # coin black list
+    add_coin_button = (By.XPATH, '//button[@class = "styles__StyledButton-sc-1afd7sh-0 fnpmsT styles__BlackListAdd-sc-1gyq91b-15 eGxwgI"]')
+    type_coin_name_input = (By.XPATH, '//input[@class = "styles__StyledInput-sc-1ioa5fk-3 deOWdE"]')
+    # auto alignment
+    trader_alignment_dropdown = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div[2]/div[2]/div[2]/div[1]/div[3]/div/div/div/div[4]/div[3]/div[3]/div[1]/div[2]/button')
+    trader_alignment_enabled_button = (By.XPATH, '//button[@class = "styles__Option-sc-s7kz7k-7 ibhdvx"]')
+    trader_alignment_disabled_button = (By.XPATH, '//button[@class = "styles__Option-sc-s7kz7k-7 bnYHls"]')
 
 
 
@@ -73,6 +78,8 @@ class All_Locator:
     # subscription_page
     stop_loss_value_on_subscription_page = (By.XPATH, '//div[@class = "styles__RightSide-sc-l28p96-6 jSTTGz"][contains(text(), "%")]')
     stop_loss_convert_to_value_on_subscription_page = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div[2]/div[3]/div[2]/div[1]/div[4]/div[3]/div[2]')
+    trader_alignment_value_on_subscription_page = (By.XPATH, '//*[@id="__next"]/div/div[2]/main/div[2]/div[3]/div[2]/div[1]/div[5]/div[2]/div[2]')
+
 
 
 
