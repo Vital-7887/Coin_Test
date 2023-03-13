@@ -16,14 +16,13 @@ class LogInAndAddApi(BasePage):
         self.element_is_visible(self.locators.log_in_button).click()
 
     def Add_API_Key_Bybit(self):
-        self.element_is_visible(self.locators.add_account_button).click()
+        self.element_is_present(self.locators.add_account_button).click()
         self.element_is_visible(self.locators.select_exchange_button_Bybit).click()
         self.element_is_visible(self.locators.next_step_button).click()
         self.element_is_visible(self.locators.next_step_button).click()
         self.element_is_visible(self.locators.name_api_key_field).send_keys(API_BYBIT.get('api_name'))
         self.element_is_visible(self.locators.api_key_field).send_keys(API_BYBIT.get('api_key'))
         self.element_is_visible(self.locators.secret_key_field).send_keys(API_BYBIT.get('secret_key'))
-        time.sleep(2)
         self.element_is_visible(self.locators.add_account_button_step3).click()
         try:
             self.element_is_visible(self.locators.done_button).click()
@@ -40,7 +39,6 @@ class LogInAndAddApi(BasePage):
         self.element_is_visible(self.locators.name_api_key_field).send_keys(API_BINANCE.get('api_name'))
         self.element_is_visible(self.locators.api_key_field).send_keys(API_BINANCE.get('api_key'))
         self.element_is_visible(self.locators.secret_key_field).send_keys(API_BINANCE.get('secret_key'))
-        time.sleep(2)
         self.element_is_visible(self.locators.add_account_button_step3).click()
         try:
             self.element_is_visible(self.locators.done_button).click()
@@ -57,7 +55,6 @@ class LogInAndAddApi(BasePage):
         self.element_is_visible(self.locators.api_key_field).send_keys(API_OKX.get('api_key'))
         self.element_is_visible(self.locators.secret_key_field).send_keys(API_OKX.get('secret_key'))
         self.element_is_visible(self.locators.password_api_field).send_keys(API_OKX.get('api_password'))
-        time.sleep(2)
         self.element_is_visible(self.locators.add_account_button_step3).click()
         try:
             self.element_is_visible(self.locators.done_button).click()
