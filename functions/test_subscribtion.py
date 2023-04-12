@@ -1,5 +1,7 @@
 import time
 import random
+
+import allure
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from pages.basepage import BasePage
@@ -9,16 +11,19 @@ from consts import COIN_LIST
 class Subscription(BasePage):
     locators = All_Locator
 
+    @allure.step("Check setting stop loss value")
     def Setting_stop_loss_value(self):
         self.element_is_present(self.locators.stop_loss_field).click()
         self.element_is_present(self.locators.enabled_stop_loss_item).click()
         self.element_is_present(self.locators.value_stop_loss_field).send_keys(Keys.BACK_SPACE)
         self.element_is_present(self.locators.value_stop_loss_field).send_keys(Keys.BACK_SPACE)
         self.element_is_present(self.locators.value_stop_loss_field).click()
-        self.element_is_present(self.locators.value_stop_loss_field).send_keys(random.randint(5, 95))
+        with allure.step("stop loss value input"):
+            self.element_is_present(self.locators.value_stop_loss_field).send_keys(random.randint(5, 95))
         time.sleep(1)
         return int(self.element_is_present(self.locators.value_stop_loss_field).get_attribute('value'))
 
+    @allure.step("Check setting stop loss convert")
     def Settinng_stop_loss_convert(self):
         self.element_is_present(self.locators.convert_stop_loss_field).click()
         convert_to = [self.element_is_present(self.locators.convert_stop_loss_value_usdt),
@@ -27,37 +32,43 @@ class Subscription(BasePage):
         time.sleep(1)
         return self.element_is_visible(self.locators.convert_stop_loss_field).text
 
+    @allure.step("Check setting black list coiin")
     def Setting_black_list_coin(self):
         self.element_is_present(self.locators.add_coin_button).click()
         time.sleep(1)
         self.element_is_present(self.locators.type_coin_name_input).click()
         time.sleep(1)
         coin = COIN_LIST[random.randint(0, 44)]
-        self.element_is_present(self.locators.type_coin_name_input).send_keys(coin)
+        with allure.step("Black coin selection"):
+            self.element_is_present(self.locators.type_coin_name_input).send_keys(coin)
         self.element_is_present(self.locators.type_coin_name_input).send_keys(Keys.RETURN)
         return self.element_is_present(self.locators.blacklisted_coin).text
 
+    @allure.step("Check trader alignment")
     def Setting_trader_alignment(self):
         self.element_is_present(self.locators.trader_alignment_dropdown).click()
         time.sleep(1)
         enable_trader_alignment = self.element_is_clickable(self.locators.trader_alignment_enabled_button)
         disabled_trader_alignment = self.element_is_clickable(self.locators.trader_alignment_disabled_button)
         trader_alignment_value = [enable_trader_alignment, disabled_trader_alignment]
-        trader_alignment_value[random.randint(0, 1)].click()
+        with allure.step("Trader alignment selection"):
+            trader_alignment_value[random.randint(0, 1)].click()
         time.sleep(1)
         return self.element_is_present(self.locators.trader_alignment_dropdown).text
 
+    @allure.step("Check schedule alignment")
     def Setting_scheduled_alignment(self):
         self.element_is_present(self.locators.scheduled_alignment_dropdown).click()
         self.element_is_present(self.locators.scheduled_alignment_enabled_button).click()
         self.element_is_present(self.locators.scheduled_alignment_frequency_dropdown).click()
         number_item = str(random.randint(1, 9))
-        scheduled_alignment_frequency_dropdown_item = (
-            By.XPATH, "//button[@class='styles__Option-sc-s7kz7k-7 ibhdvx'][" + number_item + "]")
+        with allure.step("Schedule alignment selection"):
+            scheduled_alignment_frequency_dropdown_item = (By.XPATH, "//button[@class='styles__Option-sc-s7kz7k-7 ibhdvx'][" + number_item + "]")
         self.element_is_present(scheduled_alignment_frequency_dropdown_item).click()
         time.sleep(1)
         return self.element_is_present(self.locators.scheduled_alignment_frequency_dropdown).text
 
+    @allure.step("Checking a subscription to a spot strategy")
     def Subscribe_to_spot_strategy(self, api_name):
 
         self.api_name = api_name
@@ -96,8 +107,7 @@ class Subscription(BasePage):
         assert expected_result_scheduled_alignment_frequency == actual_result_scheduled_alignment_frequency
         assert expected_result_coin_black_list == actual_result_coin_black_list
 
-
-
+    @allure.step("Checking a subscription to a futures strategy with autoalign")
     def Subscribe_to_futures_strategy_with_autoalign(self, api_name):
         self.api_name = api_name
         self.element_is_visible(self.locators.subscribe_to_copytrading_button).click()
